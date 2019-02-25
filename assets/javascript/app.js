@@ -61,12 +61,44 @@ window.onload = function() {
       $("#question" + i).text(questions[i].question);
     }
   }
-
-    function displayAnswers() {
-      for(var i = 0; i < questions.length; i++) {
+function displayAnswers() {
+    function displayChoices1() {
+      for(var i = 0; i < 25; i++) {
         $("#q" + i).text(questions[0].choices[i]);
       }
     }
+    function displayChoices2() {
+      for(var j = 0; j < questions.length; j++) {
+        $("#q" + i).text(questions[1].choices[j]);
+      }
+    }
+    function displayChoices3() {
+      for(var k = 0; k < questions.length; k++) {
+        $("#q" + i).text(questions[2].choices[k]);
+      }
+    }
+    function displayChoices4() {
+      for(var l = 0; l < questions.length; l++) {
+        $("#q" + i).text(questions[3].choices[l]);
+      }
+    }
+    function displayChoices5() {
+      for(var m = 0; m < questions.length; m++) {
+        $("#q" + i).text(questions[4].choices[m]);
+      }
+    }
+    function displayChoices6() {
+      for(var o = 0; o < questions.length; o++) {
+        $("#q" + i).text(questions[5].choices[o]);
+      }
+    }
+    function displayChoices7() {
+      for(var p = 0; p < questions.length; p++) {
+        $("#q" + i).text(questions[6].choices[p]);
+      }
+    }
+  }
+}
 
 
     clock = setInterval(countdown, 1000);
