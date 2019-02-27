@@ -63,7 +63,7 @@ window.onload = function() {
   }
 function displayAnswers() {
       for(var i = 0; i < 25; i++) {
-        $("#q" + i).append(questions[0].choices[i]);
+        $("#q" + i).text(questions[0].choices[i]);
       }
       for(var j = 2; j < 25; j++) {
         $("#q" + j).text(questions[1].choices[j - 2]);
@@ -84,9 +84,6 @@ function displayAnswers() {
         $("#q" + o).text(questions[6].choices[o - 22]);
       }
   }
-
-
-
     clock = setInterval(countdown, 1000);
     displayQuestions();
     displayAnswers();
