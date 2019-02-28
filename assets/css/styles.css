@@ -10,7 +10,6 @@ body {
 }
 
 button {
-  margin-top: 20%;
   padding: 1.6rem;
   background-color: #f3f3f3;
   color: #80A25E;
@@ -29,6 +28,8 @@ h2, h3, label {
 
 button:hover {
   cursor: pointer;
+  color: #f3f3f3;
+  background: #80A25E;
 }
 
 input:hover {
@@ -37,4 +38,9 @@ input:hover {
 
 #submitButton {
   margin-top: 0;
+}
+
+#ronPOG {
+  opacity: .8;
+  width: auto;
 }

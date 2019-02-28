@@ -1,5 +1,5 @@
 var clock;
-var timer = 45;
+var timer = 30;
 var userCorrect = 0;
 var userWrong = 0;
 var unanswered = 0;
@@ -41,6 +41,7 @@ window.onload = function() {
   $("#startButton").click(function(event) {
   $("#startButton").remove();
   $("#game").show();
+  $("#timer").append(timer);
 
   function countdown() {
     timer--;
