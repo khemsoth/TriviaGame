@@ -47,6 +47,9 @@ window.onload = function() {
     $("#timer").text("Time Remaining: 00:" + timer);
     if(timer === 0) {
       stopTimer();
+      checkAnswer();
+      $("#game").hide();
+      $("#resultsScreen").show();
     }
     if (timer < 10) {
       $("#timer").text("Time Remaining: 00:0" + timer);
