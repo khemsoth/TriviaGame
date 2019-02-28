@@ -1,45 +1,55 @@
 var clock;
 var timer = 45;
-var correct = 0;
-var wrong = 0;
+var userCorrect = 0;
+var userWrong = 0;
 var unanswered = 0;
+var userAnswers = [];
 var questions = [{
     question: "Leslie Knope is from Pawnee.",
     choices: ["True", "False"],
-    correct: "True"
+    correct: 0
   },
   { question: "What political party does Ron Swanson affiliate with?",
     choices: ["Democrat", "Republican", "Libertarian", "Other"],
-    correct: "Libertarian"
+    correct: 2
   },
   { question: "What game does Ben create while he is unemployed?",
     choices: ["Cones of Dunshire", "Media Blitz", "Ya Heard", "Candy World"],
-    correct: "Cones of Dunshire"
+    correct: 0
   },
   { question:"Ron's saxophone playing alter-ego was named ________.",
     choices: ["Ron Swan", "Duke Silver", "Angelsnack", "Crazy Ira"],
-    correct: "Duke Silver"
+    correct: 1
   },
   { question: "Which of the following was NOT the name of Andy's band?",
     choices: ["Mouse Rat", "Everything Rhymes With Orange", "Scarecrow Boat", "Fleetwood Mac Sex Pants"],
-    correct: "Fleetwood Mac Sex Pants"
+    correct: 3
   },
   { question: "What does Ron Swanson dress up as every year for Halloween?",
     choices: ["Nothing", "Bacon", "Pirate", "Sherlock Holmes"],
-    correct: "Pirate"
+    correct: 2
   },
   { question: "What is revealed during Leslie's MRI?",
     choices: ["She has a brain tumor", 'She has a "big oven"', "She is perfectly healthy"],
-    correct: 'She had a "big oven"'
+    correct: 1
   }
 ]
 
 window.onload = function() {
+  $("#game").hide();
+  $("#resultsScreen").hide();
+  $("#startButton").click(function(event) {
+  $("#startButton").remove();
+  $("#game").show();
+
   function countdown() {
     timer--;
     $("#timer").text("Time Remaining: 00:" + timer);
     if(timer === 0) {
       stopTimer();
+    }
+    if (timer < 10) {
+      $("#timer").text("Time Remaining: 00:0" + timer);
     }
   }
   function stopTimer() {
@@ -52,10 +62,26 @@ window.onload = function() {
       $("#timer").text("Time Remaining: 00:00");
     }
     function checkAnswer() {
-      if($("input:checked") === $("input").value("correct")) {
-        correct++;
+      userAnswers.push($("input[name='q0']:checked").val());
+      userAnswers.push($("input[name='q1']:checked").val());
+      userAnswers.push($("input[name='q2']:checked").val());
+      userAnswers.push($("input[name='q3']:checked").val());
+      userAnswers.push($("input[name='q4']:checked").val());
+      userAnswers.push($("input[name='q5']:checked").val());
+      userAnswers.push($("input[name='q6']:checked").val());
+      for(var i = 0; i < questions.length; i++) {
+      if(userAnswers[i] == questions[i].correct) {
+        userCorrect++;
+        }
+      else if(userAnswers[i] != questions[i].correct) {
+        userWrong++;
+        }
       }
-}
+      $("#userCorrect").append(userCorrect);
+      $("#userWrong").append(userWrong);
+      $("#unanswered").append(unanswered);
+  }
+
     function displayQuestions() {
       for(var i = 0; i < questions.length; i++) {
       $("#question" + i).text(questions[i].question);
@@ -90,4 +116,8 @@ function displayAnswers() {
 
 $("button[name='submitButton']").click(function() {
   submitClick();
+  checkAnswer();
+  $("#game").hide();
+  $("#resultsScreen").show();
+})
 })}
