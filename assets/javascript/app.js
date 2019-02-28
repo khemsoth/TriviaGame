@@ -7,7 +7,7 @@ var userAnswers = [];
 var questions = [{
     question: "Leslie Knope is from Pawnee.",
     choices: ["True", "False"],
-    correct: 0
+    correct: 1
   },
   { question: "What political party does Ron Swanson affiliate with?",
     choices: ["Democrat", "Republican", "Libertarian", "Other"],

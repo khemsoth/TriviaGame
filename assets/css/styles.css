@@ -1,0 +1,40 @@
+body {
+  text-align: center;
+  background: url(./images/background.png);
+  font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+.startScreen, #game, #resultsScreen {
+  background-color: rgba(255, 255, 255, .9);
+  padding: 20px;
+}
+
+button {
+  margin-top: 20%;
+  padding: 1.6rem;
+  background-color: #f3f3f3;
+  color: #80A25E;
+  border: 1px #80A25E solid;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 5rem;
+  color: #80A25E;
+}
+
+h2, h3, label {
+  color: #48311C;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input:hover {
+  cursor: pointer;
+}
+
+#submitButton {
+  margin-top: 0;
+}
