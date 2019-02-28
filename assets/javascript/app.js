@@ -2,7 +2,6 @@ var clock;
 var timer = 30;
 var userCorrect = 0;
 var userWrong = 0;
-var unanswered = 0;
 var userAnswers = [];
 var questions = [{
     question: "Leslie Knope is from Pawnee.",
@@ -83,7 +82,6 @@ window.onload = function() {
       }
       $("#userCorrect").append(userCorrect);
       $("#userWrong").append(userWrong);
-      $("#unanswered").append(unanswered);
   }
 
     function displayQuestions() {
